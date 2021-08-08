@@ -1,0 +1,16 @@
+img.table-logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    border: 1px solid grey;
+    padding: 2px;
+    border-radius: 4px;
+}
+button.create-new {
+    width: 80px;
+    margin: 5px 1rem;
+    font-size: 13px;
+}
+.table td, .table th {
+    vertical-align: baseline!important;
+}
