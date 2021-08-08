@@ -24,10 +24,10 @@ class StoreEmployees extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => 'alpha|required|max:255',
-            'last_name' => 'alpha|required|max:255',
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
             'company_id' => 'required|max:20',
-            'phone' => 'nullable|numeric',
+            'phone' => 'nullable',
             'email' => 'nullable|email'
         ];
     }

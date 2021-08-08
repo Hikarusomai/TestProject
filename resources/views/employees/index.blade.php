@@ -239,6 +239,7 @@
                         }, 3000);
                     }); 
             });
+            $('#editmodal input:not(#editmodal input[name="_token"],#editmodal select').val('');
         });
         $(document).on('click','#save-create',function(){
             var formData = new FormData($('#form-create')[0]); 
@@ -267,6 +268,7 @@
                         }, 3000);
                     }); 
             });
+            $('#createmodal input:not(#createmodal input[name="_token"],#createmodal select').val('');
         });
         $(document).on('change','.custom-file-input',function(){
             $('#editmodal img').hide();
@@ -295,6 +297,39 @@
             }).fail(function(){
                 toastr.error('Something went wrong, please try again!');
             });
+        }); 
+        $('input[name="first_name"],input[name="last_name"]').keydown(function(e) { 
+          var k = e.keyCode || e.which;
+          var ok = k >= 65 && k <= 90 || // A-Z
+            k >= 96 && k <= 105 || // a-z
+            k >= 35 && k <= 40 || // arrows
+            k == 32 ||
+            // k == 9 || //tab
+            // k == 46 || //del
+            k == 8 || // backspaces
+            // (!e.shiftKey && k >= 48 && k <= 57); // only 0-9 (ignore SHIFT options)
+            (!e.shiftKey && k <= 48 && k >= 57);
+
+          if(!ok || (e.ctrlKey && e.altKey)){
+            e.preventDefault();
+          }
+        });
+        $('input[name="phone"]').keydown(function(e) { 
+          var k = e.keyCode || e.which;
+          var ok = 
+          // k >= 65 && k <= 90 || // A-Z
+            // k >= 96 && k <= 105 || // a-z
+            k >= 35 && k <= 40 || // arrows
+            k == 187 ||
+            // k == 9 || //tab
+            k == 46 || //del
+            k == 8 || // backspaces
+            // (!e.shiftKey && k >= 48 && k <= 57); // only 0-9 (ignore SHIFT options)
+            (!e.shiftKey && k >= 48 && k <= 57);
+
+          if(!ok || (e.ctrlKey && e.altKey)){
+            e.preventDefault();
+          }
         });
     });
     function deleteemployee(id){
