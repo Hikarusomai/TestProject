@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
                 'first_name' => 'Yan',
                 'last_name' => 'Doe',
                 'email' => 'user@grtech.com.my',
-                'password' => Hash::make(env('USER_PASSWORD',''))
+                'password' => Hash::make(env('USER_PASSWORD','password'))
             ]
         ); 
         DB::table('users')->insert(
@@ -38,7 +38,7 @@ class CreateUsersTable extends Migration
                 'first_name' => 'admin',
                 'last_name' => 'Ml',
                 'email' => 'admin@grtech.com.my',
-                'password' => Hash::make(env('USER_PASSWORD','')),
+                'password' => Hash::make(env('USER_PASSWORD','password')),
                 'type' => 'internal'
             ]
         ); 

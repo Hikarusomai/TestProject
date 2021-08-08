@@ -52,7 +52,7 @@ class EmployeesController extends Controller
                 'email' => $request->email ?? '',
                 'phone' => $request->phone ?? '', 
             ]; 
-            // Employees::insert($data);
+            Employees::insert($data);
             //notifier
             $company_details = Companies::whereId($request->company_id)->first();
             $details = [
