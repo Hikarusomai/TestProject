@@ -10,10 +10,10 @@
 # TestProject
 
 Steps:
-Composer install.
-php artisan migrate.
-php artisan storage:link.
-php artisan queue:work &.
+Composer install</br>
+php artisan migrate</br>
+php artisan storage:link</br>
+php artisan queue:work &</br>
 
 
 ## About Laravel
